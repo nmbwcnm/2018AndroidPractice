@@ -1,0 +1,27 @@
+<manifest xmlns:android="http://schemas.android.com/apk/res/android"
+    package="com.example.xufengrong.androidcontrol">
+    <!--声明Bluetooth权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH"/>
+    <!--声明Bluetooth_Admin权限-->
+    <uses-permission android:name="android.permission.BLUETOOTH_ADMIN"/>
+    <!--&lt;!&ndash;需要ble feature 需要声明&ndash;&gt; 为true的时候只能在支持android的设备上运行，false 时所有andriod都可以-->
+    <uses-feature android:name="android.hardware.bluetooth_le" android:required ="true"/>
+
+    <uses-permission android:name="android.permission.ACCESS_COARSE_LOCATION"/>
+    <application
+        android:allowBackup="true"
+        android:icon="@mipmap/ic_launcher"
+        android:label="@string/app_name"
+        android:roundIcon="@mipmap/ic_launcher_round"
+        android:supportsRtl="true"
+        android:theme="@style/AppTheme" >
+
+        <activity android:name=".MainActivity"
+            android:label="煤气灶天下第一">
+            <intent-filter>
+                <action android:name="android.intent.action.MAIN"/>
+                <category android:name="android.intent.category.LAUNCHER"/>
+            </intent-filter>
+        </activity>
+    </application>
+</manifest>
