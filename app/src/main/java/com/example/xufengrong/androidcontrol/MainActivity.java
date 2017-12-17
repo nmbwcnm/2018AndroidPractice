@@ -92,37 +92,31 @@ public class MainActivity extends Activity implements View.OnClickListener{
                         scanBLEDevice(false);
                 }
 
-
-                //改变按钮的文字
-                if(mScanning==true){
-                        scanButton.setText("停止扫描蓝牙BLE设备");
-                }
-                else
-                {
-                        scanButton.setText("开始扫描蓝牙BLE设备");
-                }
         }
 
 
         //
         public void scanBLEDevice(final boolean enable){
-                Log.d("Mian","1\r\n");
                 if(enable) {
-                        Log.d("Mian","2\r\n");
                         mHandler.postDelayed(new Runnable() {
                                 @Override
                                 public void run() {
+                                        scanFlag=true;
                                         mScanning = false;
                                         scanner.stopScan(mLeScanCallback);
                                         Log.d("MainActivity","stopScanning");
+                                        scanButton.setText("开始扫描蓝牙BLE设备");
                                 }
                         }, SCAN_PERIOD);
+                        scanFlag= false;
                        mScanning = true;
                        scanner.startScan(mLeScanCallback);
+                       scanButton.setText("停止扫描蓝牙BLE设备");
                 }else {
+                        scanFlag=true;
                         mScanning=false;
                         scanner.stopScan(mLeScanCallback);
-                        Log.d("MainActivity","3\r\n");
+                        scanButton.setText("开始扫描蓝牙BLE设备");
                 }
 
         }
@@ -252,9 +246,9 @@ public class MainActivity extends Activity implements View.OnClickListener{
 
 //在这里遇到了Bug首先在下面的实例中没有加view. 。。。导致编译器在Main_activity_layout中找name address等Id找不到报错
 //                        认为这这些实例是空的需要重新敲下面这三个语句
-                        TextView nameView=(TextView)view.findViewById(R.id.Name);
-                        TextView addressView=(TextView)view.findViewById(R.id.Address);
-                        TextView rssisView=(TextView)view.findViewById(R.id.DeviceRssi);
+                        TextView nameView=(TextView)view.findViewById(R.id.NameText);
+                        TextView addressView=(TextView)view.findViewById(R.id.AddressText);
+                        TextView rssisView=(TextView)view.findViewById(R.id.DeviceRssiText);
                         if(view==null)
                         {
                                 Log.d("MainActivity","Null Object");

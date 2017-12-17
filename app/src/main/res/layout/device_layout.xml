@@ -12,6 +12,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="DeviceName:"/>
+
+        <TextView
+            android:id="@+id/NameText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView:"/>
     </LinearLayout>
 
 
@@ -23,6 +29,12 @@
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
             android:text="Address"/>
+
+        <TextView
+            android:id="@+id/AddressText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView:"/>
     </LinearLayout>
 
 
@@ -33,7 +45,13 @@
             android:id="@+id/DeviceRssi"
             android:layout_width="wrap_content"
             android:layout_height="wrap_content"
-            android:text="Rssi"/>
+            android:text="Rssi:"/>
+
+        <TextView
+            android:id="@+id/DeviceRssiText"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:text="TextView:"/>
     </LinearLayout>
 
 
